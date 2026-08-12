@@ -9,7 +9,7 @@
   --ink-soft:#5C534A;
   --espresso:#1C1815;
   --espresso-2:#282320;
-  --clay:#BE5B34;
+  --clay:#A94E28;
   --clay-2:#A24A28;
   --line:rgba(34,30,26,.12);
   --line-lt:rgba(255,255,255,.14);
@@ -49,7 +49,7 @@ p{margin:0 0 1rem}
   letter-spacing:.02em;opacity:0;transform:translateY(10px);
   animation:introUp .8s ease forwards .15s;
 }
-#intro .mono b{color:var(--clay);font-weight:600}
+#intro .mono b{color:#E08B5E;font-weight:600}
 #intro .sub{color:rgba(245,248,242,.6);font-family:"Karla",sans-serif;font-size:14px;letter-spacing:.28em;text-transform:uppercase;opacity:0;animation:introUp .8s ease forwards .35s}
 #intro .bar{width:0;height:2px;background:var(--clay);animation:introBar 1s ease forwards .5s;max-width:160px}
 @keyframes introUp{to{opacity:1;transform:none}}
@@ -135,14 +135,6 @@ section{position:relative}
 .sec-head p{margin-top:16px;color:var(--ink-soft);font-size:18px}
 
 /* ---------- Trust strip ---------- */
-.trust{background:var(--ink);color:var(--paper)}
-.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:0}
-.trust-item{display:flex;gap:16px;align-items:flex-start;padding:38px 34px;border-right:1px solid var(--line-lt)}
-.trust-item:last-child{border-right:none}
-.trust-item .ic{width:42px;height:42px;border-radius:10px;background:rgba(190,91,52,.18);color:#E9A67F;display:grid;place-items:center;flex:0 0 auto}
-.trust-item .ic svg{width:22px;height:22px}
-.trust-item h3{font-family:"Karla",sans-serif;font-size:16px;font-weight:700;letter-spacing:.01em;margin-bottom:4px}
-.trust-item p{margin:0;font-size:14.5px;color:rgba(245,240,232,.72);line-height:1.5}
 
 /* ---------- Services ---------- */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
@@ -264,10 +256,7 @@ section{position:relative}
   .nav-links a.lnk{padding:15px 24px;border-bottom:1px solid var(--line);font-size:17px}
   .nav-links .nav-cta{margin:14px 24px 4px;justify-content:center}
   .burger{display:inline-flex}
-  .trust-grid{grid-template-columns:1fr}
-  .trust-item{border-right:none;border-bottom:1px solid var(--line-lt)}
-  .trust-item:last-child{border-bottom:none}
-  .svc-grid,.crew-grid,.rev-grid{grid-template-columns:1fr 1fr}
+        .svc-grid,.crew-grid,.rev-grid{grid-template-columns:1fr 1fr}
   .about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
   .about-media .corner{left:16px}
   .footer-top{grid-template-columns:1fr 1fr}
