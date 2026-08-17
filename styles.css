@@ -66,7 +66,7 @@ body.loaded #intro{opacity:0;visibility:hidden}
 /* ---------- Nav ---------- */
 .nav{
   position:sticky;top:0;z-index:900;
-  background:rgba(251,248,242,.82);backdrop-filter:blur(12px);
+  background:rgba(247,249,252,.86);backdrop-filter:blur(12px);
   border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s,background .3s;
 }
 .nav.scrolled{border-color:var(--line);box-shadow:0 6px 24px -18px rgba(6,20,52,.5)}
@@ -112,7 +112,7 @@ body.loaded #intro{opacity:0;visibility:hidden}
 .hero-slides .slide.active{opacity:1;animation:kenburns 8s ease forwards}
 @keyframes kenburns{from{transform:scale(1.06)}to{transform:scale(1.14)}}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,20,52,.58) 0%,rgba(6,20,52,.38) 40%,rgba(6,20,52,.86) 100%)}
-.hero-in{position:relative;z-index:2;padding:120px 0 64px;width:100%}
+.hero-in{position:relative;z-index:2;padding:120px 24px 64px;width:100%}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:"Karla",sans-serif;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:#BCD0F4;margin-bottom:22px}
 .eyebrow::before{content:"";width:26px;height:2px;background:var(--orange)}
 .hero h1{font-size:clamp(38px,7vw,74px);max-width:15ch;font-weight:600}
@@ -270,7 +270,7 @@ section{position:relative}
   body{font-size:16px}
   .band{padding:66px 0}
   .wrap{padding:0 20px}
-  .hero-in{padding:104px 0 48px}
+  .hero-in{padding:104px 24px 48px}
   .svc-grid,.crew-grid,.rev-grid,.footer-top{grid-template-columns:1fr}
   .hero-cta{flex-direction:column}
   .hero-cta .btn{width:100%}
