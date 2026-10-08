@@ -84,12 +84,12 @@ body.loaded #intro{opacity:0;visibility:hidden}
 .nav-cta:hover{background:var(--clay);transform:translateY(-1px)}
 .nav-cta svg{width:16px;height:16px}
 .burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;cursor:pointer;padding:0;align-items:center;justify-content:center}
-.burger span{display:block;width:20px;height:2px;background:var(--ink);position:relative;transition:.3s}
-.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--ink);transition:.3s}
-.burger span::before{top:-6px}.burger span::after{top:6px}
-.burger.open span{background:transparent}
-.burger.open span::before{top:0;transform:rotate(45deg)}
-.burger.open span::after{top:0;transform:rotate(-45deg)}
+.burger .burger-icon{display:block;width:20px;height:2px;background:var(--ink);position:relative;transition:.3s}
+.burger .burger-icon::before,.burger .burger-icon::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--ink);transition:.3s}
+.burger .burger-icon::before{top:-6px}.burger .burger-icon::after{top:6px}
+.burger.open .burger-icon{background:transparent}
+.burger.open .burger-icon::before{top:0;transform:rotate(45deg)}
+.burger.open .burger-icon::after{top:0;transform:rotate(-45deg)}
 
 /* ---------- Buttons ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:600;font-size:15px;padding:14px 24px;border-radius:100px;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s;border:1px solid transparent;min-height:48px}
@@ -323,3 +323,16 @@ section{position:relative}
 .faq-item summary:focus-visible{outline:3px solid var(--orange);outline-offset:-3px;border-radius:var(--r-sm)}
 .faq-item p{margin:0;padding:0 24px 22px;color:var(--ink-soft);font-size:16px}
 @media(max-width:620px){.faq-item summary{font-size:17px;padding:18px 18px}.faq-item p{padding:0 18px 20px}}
+
+/* Bigger business name in the header, and a "Menu" label on the menu button (client request) */
+.nav .brand-lockup{container-type:inline-size;width:clamp(200px,calc(100vw - 710px),400px)}
+.nav .brand-sub{font-size:5.75cqi;margin-top:1.5cqi}
+@media(min-width:901px){.nav-in{height:118px}}
+.burger{gap:8px;width:auto;padding:0 14px 0 12px}
+.burger-label{font-family:"Karla",sans-serif;font-size:15px;font-weight:600;line-height:1;letter-spacing:.02em;color:var(--ink)}
+@media(max-width:900px){
+  .nav .brand-lockup{width:min(290px,calc(100vw - 150px))}
+}
+@media(max-width:560px){
+  .nav .brand-sub{font-size:5.75cqi;margin-top:1.5cqi}
+}
