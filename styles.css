@@ -330,9 +330,24 @@ section{position:relative}
 @media(min-width:901px){.nav-in{height:118px}}
 .burger{gap:8px;width:auto;padding:0 14px 0 12px}
 .burger-label{font-family:"Karla",sans-serif;font-size:15px;font-weight:600;line-height:1;letter-spacing:.02em;color:var(--ink)}
+/* Tablets: the name at twice its old 200px, beside the Menu button. The header grows to fit,
+   so the menu drops from the header's bottom edge rather than a fixed 74px. */
 @media(max-width:900px){
-  .nav .brand-lockup{width:min(290px,calc(100vw - 150px))}
+  .nav-in{height:auto;min-height:74px;padding-top:12px;padding-bottom:12px}
+  .nav .brand-lockup{width:min(400px,calc(100vw - 170px))}
+  .nav-links{position:absolute;inset:100% 0 auto 0;transform:translateY(-10px);opacity:0;visibility:hidden;transition:transform .3s ease,opacity .3s ease,visibility 0s linear .3s}
+  .nav-links.open{transform:none;opacity:1;visibility:visible;transition:transform .3s ease,opacity .3s ease}
 }
+/* Phones: the name at twice its old 164px on a row of its own, with Call and Menu beneath.
+   The header sticks by that button row (negative top = name row height: 12px padding,
+   the lockup at .2325 of its width; the 10px gap stays above the buttons), so the name scrolls away with the page. */
+.nav-call-m{display:none}
 @media(max-width:560px){
-  .nav .brand-sub{font-size:5.75cqi;margin-top:1.5cqi}
+  .nav{--lw:min(328px,calc(100vw - 40px));top:calc(-1 * (var(--lw) * .2325 + 12px))}
+  .nav-in{flex-wrap:wrap;gap:10px;padding-top:12px;padding-bottom:10px}
+  .nav .brand{flex:0 0 100%;justify-content:center}
+  .nav .brand-lockup{width:var(--lw)}
+  .nav-call-m{display:inline-flex;flex:1;min-width:0;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 12px;border-radius:10px;background:var(--ink);color:var(--paper);font-weight:600;font-size:15px;white-space:nowrap}
+  .nav-call-m svg{width:16px;height:16px;flex:0 0 auto}
 }
+@media(max-width:350px){.nav-call-m{font-size:14px;gap:6px;padding:0 8px}}
