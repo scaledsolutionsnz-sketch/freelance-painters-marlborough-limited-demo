@@ -109,9 +109,10 @@ body.loaded #intro{opacity:0;visibility:hidden}
 .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;background:var(--espresso);overflow:hidden;color:var(--paper)}
 .hero-slides{position:absolute;inset:0;z-index:0}
 .hero-slides .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease;transform:scale(1.06);filter:saturate(.92) contrast(1.03)}
-.hero-slides .slide.active{opacity:1;animation:kenburns 8s ease forwards}
+.hero-slides .slide.active{opacity:1}
+.hero-slides .slide.active,.hero-slides .slide.leaving{animation:kenburns 8s ease forwards}
 @keyframes kenburns{from{transform:scale(1.06)}to{transform:scale(1.14)}}
-.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,20,52,.58) 0%,rgba(6,20,52,.38) 40%,rgba(6,20,52,.86) 100%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,20,52,.70) 0%,rgba(6,20,52,.50) 40%,rgba(6,20,52,.86) 100%)}
 .hero-in{position:relative;z-index:2;padding:120px 24px 64px;width:100%}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:"Karla",sans-serif;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:#BCD0F4;margin-bottom:22px}
 .eyebrow::before{content:"";width:26px;height:2px;background:var(--orange)}
@@ -199,6 +200,7 @@ section{position:relative}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .contact h2{font-size:clamp(30px,4.4vw,46px);margin-bottom:18px}
 .contact .lead{color:rgba(240,245,255,.8);margin-bottom:28px;font-size:17px}
+.contact .kicker{color:#BCD0F4}
 .info-rows{display:grid;gap:18px;margin-bottom:30px}
 .info-row{display:flex;gap:15px;align-items:center}
 .info-row .ic{width:44px;height:44px;border-radius:11px;background:rgba(255,255,255,.07);border:1px solid var(--line-lt);display:grid;place-items:center;flex:0 0 auto;color:var(--orange)}
@@ -234,7 +236,7 @@ section{position:relative}
 .footer-bottom a:hover{color:var(--orange)}
 
 /* ---------- Legal pages ---------- */
-.legal{padding:130px 0 90px;background:var(--paper)}
+.legal{padding:64px 0 90px;background:var(--paper)}
 .legal .wrap{max-width:820px}
 .legal .kicker{margin-bottom:14px}
 .legal h1{font-size:clamp(34px,6vw,54px);margin-bottom:10px}
@@ -251,6 +253,7 @@ section{position:relative}
   .nav-links .nav-cta{margin:14px 24px 4px;justify-content:center}
   .burger{display:inline-flex}
         .svc-grid,.crew-grid,.rev-grid{grid-template-columns:1fr 1fr}
+  .rev-grid>:last-child:nth-child(odd){grid-column:1/-1}
   .about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
   .about-media .corner{left:16px}
   .footer-top{grid-template-columns:1fr 1fr}
@@ -269,7 +272,7 @@ section{position:relative}
   .contact-card{padding:26px}
 }
 @media(prefers-reduced-motion:reduce){
-  .hero-slides .slide,.hero-slides .slide.active{animation:none;transition:opacity .4s}
+  .hero-slides .slide,.hero-slides .slide.active,.hero-slides .slide.leaving{animation:none;transition:opacity .4s}
   .reveal{transition:none;opacity:1;transform:none}
   *{scroll-behavior:auto}
 }
@@ -298,7 +301,7 @@ section{position:relative}
 }
 
 /* Hero location line, a little bigger (client request) */
-.hero .eyebrow{font-size:clamp(15px,1.6vw,18px);letter-spacing:.2em;font-weight:600}
+.hero .eyebrow{font-size:clamp(15px,1.6vw,18px);letter-spacing:.2em;font-weight:600;color:#fff}
 .hero .eyebrow::before{width:30px}
 @media(max-width:620px){.hero .eyebrow{letter-spacing:.14em}}
 
@@ -348,7 +351,7 @@ a.hero-badge:hover{background:rgba(255,255,255,.16)}
 
 /* About: the van photo shows its whole frame (Scott asked for the whole van).
    The frame follows the photo's own shape and the badge hangs below it, clear of the van. */
-.about-van img{aspect-ratio:auto 2000 / 958;height:auto;object-fit:contain}
+.about-van img{aspect-ratio:auto 1200 / 575;height:auto;object-fit:contain}
 .about-van{margin-bottom:44px}
 .about-van .corner{bottom:-58px}
 @media(max-width:620px){.about-van{margin-bottom:0}}

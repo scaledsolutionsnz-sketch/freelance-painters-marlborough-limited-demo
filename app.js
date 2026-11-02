@@ -39,9 +39,21 @@
     if (slides.length > 1) {
       var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (!reduce) {
+        // Later slides load their photo only after the page has loaded
+        function setBg() {
+          slides.forEach(function (s) {
+            if (s.dataset.bg) { s.style.backgroundImage = "url('" + s.dataset.bg + "')"; }
+          });
+        }
+        if (document.readyState === "complete") { setBg(); }
+        else { window.addEventListener("load", setBg); }
         var i = 0;
         setInterval(function () {
-          slides[i].classList.remove("active");
+          // keep the outgoing slide's zoom running while it fades out
+          var prev = slides[i];
+          prev.classList.add("leaving");
+          prev.classList.remove("active");
+          setTimeout(function () { prev.classList.remove("leaving"); }, 1700);
           i = (i + 1) % slides.length;
           slides[i].classList.add("active");
         }, 5200);
