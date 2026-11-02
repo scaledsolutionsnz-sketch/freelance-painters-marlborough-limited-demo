@@ -1,4 +1,4 @@
-/* Freelance Painters Marlborough — shared behaviour */
+/* Freelance Painters Marlborough: shared behaviour */
 (function () {
   "use strict";
 
@@ -60,15 +60,5 @@
     } else {
       items.forEach(function (el) { el.classList.add("in"); });
     }
-
-    // Build Gmail compose links from parts (avoids Cloudflare email obfuscation)
-    document.querySelectorAll("a[data-gmail]").forEach(function (a) {
-      var to = a.getAttribute("data-user") + "@" + a.getAttribute("data-domain");
-      a.href = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(to) +
-        "&su=" + (a.getAttribute("data-su") || "") +
-        "&body=" + (a.getAttribute("data-body") || "");
-      a.target = "_blank";
-      a.rel = "noopener";
-    });
   });
 })();
