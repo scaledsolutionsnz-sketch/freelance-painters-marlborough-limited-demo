@@ -356,19 +356,20 @@ a.hero-badge:hover{background:rgba(255,255,255,.16)}
 .about-van .corner{bottom:-58px}
 @media(max-width:620px){.about-van{margin-bottom:0}}
 
-/* Team: one card for Scott. If a .crew-photo is added, it becomes photo plus text. */
+/* Owner: one card for Scott, his photo beside the text (stacked on phones). */
 .crew-solo{max-width:680px;margin:0 auto;padding:40px 44px;background:#fff;box-shadow:var(--shadow-sm)}
 .crew-solo .crew-note{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
 .crew-solo:hover{transform:none;box-shadow:var(--shadow-sm)}
 .crew-solo h3{font-size:28px;margin-bottom:6px}
 .crew-solo .role{margin-bottom:16px}
 .crew-solo p{font-size:16.5px}
-.crew-solo:has(.crew-photo){max-width:860px;display:grid;grid-template-columns:240px 1fr;gap:30px;align-items:center;text-align:left}
+.crew-solo:has(.crew-photo){max-width:940px;display:grid;grid-template-columns:320px 1fr;gap:38px;align-items:center;text-align:left}
 .crew-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:12px}
+@media(max-width:900px){.crew-solo:has(.crew-photo){grid-template-columns:240px 1fr;gap:28px}}
 @media(max-width:620px){
   .crew-solo{padding:28px 22px}
   .crew-solo:has(.crew-photo){grid-template-columns:1fr;text-align:center}
-  .crew-photo{max-width:260px;margin:0 auto}
+  .crew-photo{max-width:300px;margin:0 auto}
 }
 
 /* Reviews: Google rating line */
