@@ -115,7 +115,7 @@ body.loaded #intro{opacity:0;visibility:hidden}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,20,52,.70) 0%,rgba(6,20,52,.50) 40%,rgba(6,20,52,.86) 100%)}
 .hero-in{position:relative;z-index:2;padding:120px 24px 64px;width:100%}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:"Karla",sans-serif;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:#BCD0F4;margin-bottom:22px}
-.eyebrow::before{content:"";width:26px;height:2px;background:var(--orange)}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--orange);flex-shrink:0}
 .hero h1{font-size:clamp(38px,7vw,74px);max-width:15ch;font-weight:600}
 .hero h1 em{font-style:italic;color:var(--orange);font-weight:500}
 .hero .lead{font-size:clamp(17px,2.4vw,20px);max-width:46ch;margin:22px 0 30px;color:rgba(240,245,255,.9)}
@@ -366,7 +366,7 @@ a.hero-badge:hover{background:rgba(255,255,255,.16)}
 @media(max-width:620px){
   .crew-solo{padding:28px 22px}
   .crew-solo:has(.crew-photo){grid-template-columns:1fr;text-align:center}
-  .crew-photo{max-width:300px;margin:0 auto}
+  .crew-photo{width:100%;max-width:300px;margin:0 auto}
 }
 
 /* Reviews: Google rating line */
